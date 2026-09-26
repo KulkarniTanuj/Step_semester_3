@@ -1,19 +1,19 @@
-public class main {
-    public static void main(String[] args) {
-        RentalManager rm = new RentalManager();
-        Customer c1 = new Customer("1");
-        Customer c2 = new Customer("2");
-        Customer c3 = new Customer("3");
-
-        Sedan sedanA = new Sedan("Sedan A");
-        SUV suvB = new SUV("SUV B");
-
-        rm.rentVehicle(c1, sedanA, 3);
-        rm.rentVehicle(c2, sedanA, 2);
-        rm.returnVehicle(c1, sedanA);
-        rm.rentVehicle(c3, suvB, 5);
-    }
-}
+//public class main {
+//    public static void main(String[] args) {
+//        RentalManager rm = new RentalManager();
+//        Customer c1 = new Customer("1");
+//        Customer c2 = new Customer("2");
+//        Customer c3 = new Customer("3");
+//
+//        Sedan sedanA = new Sedan("Sedan A");
+//        SUV suvB = new SUV("SUV B");
+//
+//        rm.rentVehicle(c1, sedanA, 3);
+//        rm.rentVehicle(c2, sedanA, 2);
+//        rm.returnVehicle(c1, sedanA);
+//        rm.rentVehicle(c3, suvB, 5);
+//    }
+//}
 
 
 //public class main {
@@ -57,3 +57,45 @@ public class main {
 //        oZ.pay(new PayPalPayment(false));
 //    }
 //}
+
+//public class main {
+//    public static void main(String[] args) {
+//        BookingSystem system = new BookingSystem();
+//        Guest guestA = new Guest("Customer A");
+//        Guest guestB = new Guest("Customer B");
+//        Guest guestC = new Guest("Customer C");
+//
+//        Room room101 = new StandardRoom("101");
+//        Room room201 = new DeluxeRoom("201");
+//
+//        system.checkAvailability(room101, 1, 5, "Jan 1 to Jan 5");
+//        Reservation res1 = system.reserve(guestA, room101, 1, 5, "Jan 1-5");
+//        system.reserve(guestB, room101, 3, 7, "Jan 3 to Jan 7");
+//
+//        if (res1 != null) {
+//            res1.cancel();
+//        }
+//
+//        system.reserve(guestC, room201, 41, 43, "Feb 10-12");
+//    }
+//}
+
+public class main {
+    public static void main(String[] args) {
+        Employee john = new FullTimeEmployee("John");
+        Employee bob = new Contractor("Bob");
+        Reviewer alice = new Reviewer("Alice");
+
+        LeaveRequest req1 = new LeaveRequest(john, 5, "Jan 1-5");
+        alice.review(req1, true);
+
+        System.out.println();
+
+        LeaveRequest req2 = new LeaveRequest(bob, 3, "Feb 10-12");
+        alice.review(req2, true);
+
+        System.out.println();
+
+        req1.approve();
+    }
+}
